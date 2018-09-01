@@ -15,23 +15,23 @@ const app = express();
 app.use(cors())
 
 var username = "postgres" // sandbox username
-var password = "PASSWORD" // read only privileges on our table
+var password = "qsqqpEjOTN0C" // read only privileges on our table
 var host = "localhost:5432"
 var database = "coffee_shops" // database name
 var conString = "postgres://"+username+":"+password+"@"+host+"/"+database; // Your Database Connection
 var coffee_query = "SELECT row_to_json(fc) FROM (SELECT 'FeatureCollection' As type, array_to_json(array_agg(f)) As features FROM (SELECT 'Feature' As type, ST_AsGeoJSON(lg.geom)::json As geometry,row_to_json((id, name,address)) As properties FROM coffe_shops As lg) As f) As fc";
 
 
-// var db = require('knex')({
-//   client: 'pg',
-//   connection: {
-//     // host : 'localhost:5432',
-//     host: '127.0.0.1',
-//     user : 'postgres',
-//     password : 'qsqqpEjOTN0C',
-//     database : 'coffee_shops'
-//   }
-// });
+var db = require('knex')({
+  client: 'pg',
+  connection: {
+    // host : 'localhost:5432',
+    host: '127.0.0.1',
+    user : 'postgres',
+    password : 'qsqqpEjOTN0C',
+    database : 'coffee_shops'
+  }
+});
 
 
 app.get('/data_radiobase', (req, res) => {
