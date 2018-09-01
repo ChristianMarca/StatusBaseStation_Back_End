@@ -3,6 +3,8 @@ require('./config/config');
 const bodyParser =require('body-parser');
 const express = require('express');
 const socketIO = require('socket.io');
+//Comunicacion en tiempo real
+//Proto-Type
 // const knex = require('knex');
 const path = require('path');
 

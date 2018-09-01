@@ -5,4 +5,6 @@
 
 para iniciar
 
-```Requiere Base de Datos```
+
+```npm install```
+##Requiere Base de Datos
