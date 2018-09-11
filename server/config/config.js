@@ -1,7 +1,7 @@
 // ============================
 //  Puerto
 // ============================
-process.env.PORT = process.env.PORT || 3000;
+process.env.PORT = process.env.PORT || 3001;
 
 
 // ============================
@@ -31,7 +31,7 @@ process.env.SEED = process.env.SEED || '802.11qsqqpEjOTN0Cencrypted_seed_hash';
 let urlDB;
 
 if (process.env.NODE_ENV === 'dev') {
-    urlDB = 'mongodb://localhost:27017/cafe';
+    urlDB = 'mongodb://localhost:27017/plataforma_sma';
 } else {
     urlDB = process.env.MONGO_URI;
 }
